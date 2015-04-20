@@ -37,7 +37,6 @@ Admin::model(\App\Contact::class)->title('Contact')->display(function ()
 		]);
 		$tabs[] = AdminDisplay::tab($form)->label('Main Form')->active(true);
 
-		$country = null;
 		if ($id)
 		{
 			$instance = \App\Contact::find($id);
@@ -48,7 +47,6 @@ Admin::model(\App\Contact::class)->title('Contact')->display(function ()
 			$companies = Admin::model(\App\Company::class)->display();
 			$companies->scope('withContact', $id);
 			$companies->parameters(['contact_id' => $id]);
-
 			$tabs[] = AdminDisplay::tab($companies)->label('Companies');
 		}
 
