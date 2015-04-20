@@ -17,9 +17,4 @@ class Country extends Model
 		return $this->hasMany('\App\Contact');
 	}
 
-	public function scopeTest($query, $value)
-	{
-		$query->where('title', $value);
-	}
-
 }
