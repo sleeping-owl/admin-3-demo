@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d35f05f236e0976e65f6680a8c86faeb",
+    "hash": "577b980fdc8498385d5d82b683f34cad",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -623,6 +623,58 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "901bde792eddf6907f33634ff8aafb2dfddd4784"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/901bde792eddf6907f33634ff8aafb2dfddd4784",
+                "reference": "901bde792eddf6907f33634ff8aafb2dfddd4784",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "suggest": {
+                "ext-intl": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2015-04-14 13:37:56"
         },
         {
             "name": "illuminate/html",
@@ -1547,6 +1599,49 @@
                 "laravel"
             ],
             "time": "2015-04-20 11:42:47"
+        },
+        {
+            "name": "sleeping-owl/seeder",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sleeping-owl/seeder.git",
+                "reference": "0e6f60d21aa02966094c2195a7c0c79593151a69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sleeping-owl/seeder/zipball/0e6f60d21aa02966094c2195a7c0c79593151a69",
+                "reference": "0e6f60d21aa02966094c2195a7c0c79593151a69",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SleepingOwl\\Seeder": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sleeping Owl",
+                    "email": "owl.sleeping@yahoo.com"
+                }
+            ],
+            "description": "Package to create simple seeders with ability to lock/unlock tables",
+            "keywords": [
+                "database",
+                "eloquent",
+                "laravel",
+                "seeder"
+            ],
+            "time": "2015-03-01 11:21:28"
         },
         {
             "name": "sleeping-owl/with-join",
@@ -3486,7 +3581,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sleeping-owl/admin": 20
+        "sleeping-owl/admin": 20,
+        "fzaninotto/faker": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
