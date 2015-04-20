@@ -201,7 +201,7 @@ return [
 		'AdminForm'     => 'SleepingOwl\Admin\Form\AdminForm',
 		'AdminTemplate' => 'SleepingOwl\Admin\Templates\Facade\AdminTemplate',
 		'FormItem'      => 'SleepingOwl\Admin\FormItems\FormItem',
-		
+
 	],
 
 ];
