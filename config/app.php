@@ -145,6 +145,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		'SleepingOwl\Admin\AdminServiceProvider',
 	],
 
 	/*
@@ -193,6 +194,14 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
+		'Admin'         => 'SleepingOwl\Admin\Admin',
+		'Column'        => 'SleepingOwl\Admin\Columns\Column',
+		'Filter'        => 'SleepingOwl\Admin\Filter\Filter',
+		'AdminDisplay'  => 'SleepingOwl\Admin\Display\AdminDisplay',
+		'AdminForm'     => 'SleepingOwl\Admin\Form\AdminForm',
+		'AdminTemplate' => 'SleepingOwl\Admin\Templates\Facade\AdminTemplate',
+		'FormItem'      => 'SleepingOwl\Admin\FormItems\FormItem',
+		
 	],
 
 ];
