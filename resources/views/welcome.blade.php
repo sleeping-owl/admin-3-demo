@@ -1,47 +1,47 @@
-<html>
-	<head>
-		<title>Laravel</title>
-		
-		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SleepingOwl Admin Demo Application</title>
+	<style>
+		@import url(//fonts.googleapis.com/css?family=Lato:700);
 
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-				color: #B0BEC5;
-				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
-			}
+		body {
+			margin: 0;
+			font-family: 'Lato', sans-serif;
+			text-align: center;
+			color: #333;
+		}
 
-			.container {
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-			}
+		.welcome {
+			width: 500px;
+			height: 200px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -250px;
+			margin-top: -100px;
+		}
 
-			.content {
-				text-align: center;
-				display: inline-block;
-			}
+		a, a:visited {
+			text-decoration: none;
+			color: #428bca;
+		}
 
-			.title {
-				font-size: 96px;
-				margin-bottom: 40px;
-			}
+		h1 {
+			font-size: 32px;
+			margin: 16px 0 0 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="welcome">
+		<h1>This is a simple SleepingOwl Admin demo application.</h1>
+		<h2>There is no frontend in this application.</h2>
 
-			.quote {
-				font-size: 24px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="content">
-				<a href="/admin/countries">Go to admin module</a>
-			</div>
-		</div>
-	</body>
+		<p>Visit <a href="/admin">admin module</a> to see backend.</p>
+		<p>Credentials is "admin" / "SleepingOwl".</p>
+		<p>Source of the demo is available on <a href="https://github.com/sleeping-owl/admin-3-demo">GitHub</a>.</p>
+	</div>
+</body>
 </html>
