@@ -46,8 +46,11 @@ Admin::model('App\Contact3')->title('Contact')->alias('contacts3')->display(func
 		if ( ! is_null($id))
 		{
 			$instance = App\Contact::find($id);
-			$country = Admin::model('App\Country')->edit($instance->country_id);
-			$tabs[] = AdminDisplay::tab($country)->label('Form from Related Model (Country)');
+			if ($instance->country_id)
+			{
+				$country = Admin::model('App\Country')->edit($instance->country_id);
+				$tabs[] = AdminDisplay::tab($country)->label('Form from Related Model (Country)');
+			}
 
 			$companies = Admin::model('App\Company')->display();
 			$companies->scope('withContact', $id);
