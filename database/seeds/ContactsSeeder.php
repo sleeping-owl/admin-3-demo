@@ -8,14 +8,18 @@ class ContactsSeeder extends Seeder
 	public function run()
 	{
 		$uploads = public_path('images/uploads');
-		File::deleteDirectory($uploads);
-		File::makeDirectory($uploads, 0755);
+		$filesObj = \Symfony\Component\Finder\Finder::create()->files()->in($uploads);
+		$files = [];
+		foreach ($filesObj as $file)
+		{
+			$files[] = $file->getFilename();
+		}
 		$countries = \App\Country::lists('id');
 
 		$faker = Faker\Factory::create();
 		for ($i = 0; $i < 20; $i++)
 		{
-			$image = $faker->optional()->image($uploads, 640, 480, null, false);
+			$image = $faker->optional()->randomElement($files);
 
 			\App\Contact::create([
 				'firstName' => $faker->firstName,

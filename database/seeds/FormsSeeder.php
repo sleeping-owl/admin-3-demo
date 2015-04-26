@@ -8,16 +8,22 @@ class FormsSeeder extends Seeder
 	public function run()
 	{
 		$uploads = public_path('images/uploads');
+		$filesObj = \Symfony\Component\Finder\Finder::create()->files()->in($uploads);
+		$files = [];
+		foreach ($filesObj as $file)
+		{
+			$files[] = $file->getFilename();
+		}
 
 		$faker = Faker\Factory::create();
 		for ($i = 0; $i < 5; $i++)
 		{
-			$image = $faker->optional()->image($uploads, 640, 480, null, false);
+			$image = $faker->optional()->randomElement($files);
 			$images = [];
 			$imagesCount = mt_rand(0, 3);
 			for ($j = 0; $j < $imagesCount; $j++)
 			{
-				$img = $faker->image($uploads, 640, 480, null, false);
+				$img = $faker->randomElement($files);
 				$images[] = 'images/uploads/' . $img;
 			}
 
