@@ -15,5 +15,6 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('/reset', function ()
 {
-	Artisan::call('migrate:refresh', ['--seed' => true, '--no-interaction' => true]);
+	Artisan::call('migrate:refresh', ['--force' => true]);
+	Artisan::call('db:seed', ['--force' => true]);
 });
