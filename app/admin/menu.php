@@ -23,6 +23,7 @@ Admin::menu()->label('Features')->icon('fa-briefcase')->items(function ()
 	Admin::menu('App\Post')->icon('fa-star-half-o')->label('Soft Deletes');
 	Admin::menu('App\News5')->icon('fa-lock')->label('Disable Create');
 	Admin::menu('App\News6')->icon('fa-lock')->label('Disable Edit or Delete');
+	Admin::menu('App\News8')->icon('fa-cubes')->label('Bulk Actions');
 });
 Admin::menu()->label('Forms')->icon('fa-cubes')->items(function ()
 {
