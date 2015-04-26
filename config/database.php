@@ -1,5 +1,26 @@
 <?php
 
+$database = null;
+$host = null;
+$port = null;
+$username = null;
+$password = null;
+
+if (isset($_ENV['CRED_FILE']))
+{
+	$creds_string = file_get_contents($_ENV['CRED_FILE'], false);
+	if ($creds_string == false)
+	{
+		die('FATAL: Could not read credentials file');
+	}
+	$creds = json_decode($creds_string, true);
+	$database = $creds['MYSQLS']['MYSQLS_DATABASE'];
+	$host = $creds['MYSQLS']['MYSQLS_HOSTNAME'];
+	$port = $creds['MYSQLS']['MYSQLS_PORT'];
+	$username = $creds['MYSQLS']['MYSQLS_USERNAME'];
+	$password = $creds['MYSQLS']['MYSQLS_PASSWORD'];
+}
+
 return [
 
 	/*
@@ -54,10 +75,11 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('DB_DATABASE', 'forge'),
-			'username'  => env('DB_USERNAME', 'forge'),
-			'password'  => env('DB_PASSWORD', ''),
+			'host'      => ! is_null($host) ? $host : getenv('DB_HOST'),
+			'port'      => ! is_null($port) ? $port : getenv('DB_PORT'),
+			'database'  => ! is_null($database) ? $database : getenv('DB_NAME'),
+			'username'  => ! is_null($username) ? $username : getenv('DB_USERNAME'),
+			'password'  => ! is_null($password) ? $password : getenv('DB_PASSWORD'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
