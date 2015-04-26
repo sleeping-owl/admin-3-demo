@@ -1,6 +1,6 @@
 <?php
 
-Admin::model(\App\Company::class)->title('Companies')->display(function ()
+Admin::model('App\Company')->title('Companies')->display(function ()
 {
 	$display = AdminDisplay::table();
 	$display->columns([
