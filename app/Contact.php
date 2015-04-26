@@ -1,15 +1,11 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use SleepingOwl\Models\Interfaces\ModelWithImageFieldsInterface;
-use SleepingOwl\Models\SleepingOwlModel;
-use SleepingOwl\Models\Traits\ModelWithImageOrFileFieldsTrait;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class Contact extends Model
 {
+
+	protected $table = 'contacts';
 
 	protected $fillable = [
 		'firstName',
@@ -35,7 +31,12 @@ class Contact extends Model
 
 	public function companies()
 	{
-		return $this->belongsToMany('\App\Company');
+		return $this->belongsToMany('\App\Company', 'company_contact', 'contact_id');
+	}
+
+	public function getFullNameAttribute()
+	{
+		return $this->firstName . ' ' . $this->lastName;
 	}
 
 }

@@ -146,6 +146,7 @@ return [
 		'App\Providers\RouteServiceProvider',
 
 		'SleepingOwl\Admin\AdminServiceProvider',
+		'Baum\Providers\BaumServiceProvider',
 	],
 
 	/*
@@ -195,6 +196,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 
 		'Admin'         => 'SleepingOwl\Admin\Admin',
+		'AdminAuth'     => 'SleepingOwl\AdminAuth\Facades\AdminAuth',
 		'Column'        => 'SleepingOwl\Admin\Columns\Column',
 		'Filter'        => 'SleepingOwl\Admin\Filter\Filter',
 		'AdminDisplay'  => 'SleepingOwl\Admin\Display\AdminDisplay',

@@ -5,46 +5,27 @@ return [
 	 * Admin title
 	 * Displays in page title and header
 	 */
-	'title'                 => 'Sleeping Owl administrator',
+	'title'                   => 'Sleeping Owl administrator',
 
 	/*
 	 * Admin url prefix
 	 */
-	'prefix'                => 'admin',
+	'prefix'                  => 'admin',
 
-	/*
-	 * Before filters to protect admin from unauthorized users
-	 */
-	'beforeFilters'         => ['admin.auth'],
+	'middleware'              => ['admin.auth'],
 
 	/*
 	 * Path to admin bootstrap files directory in app directory
 	 * Default: 'app/admin'
 	 */
-	'bootstrapDirectory'    => app_path('admin'),
+	'bootstrapDirectory'      => app_path('admin'),
 
-	/*
-	 * Path to images directory
-	 * Default: 'public/images'
-	 */
-	'imagesDirectory'       => public_path('images'),
-
-	/*
-	 * Path to files directory
- 	 * Default: 'public/files'
- 	 */
-	'filesDirectory'        => public_path('files'),
-
-	/*
-	 * Path to images upload directory within 'imagesDirectory'
-	 * Default: 'uploads'
-	 */
-	'imagesUploadDirectory' => 'uploads',
+	'imagesUploadDirectory' => 'images/uploads',
 
 	/*
 	 * Authentication config
 	 */
-	'auth'                  => [
+	'auth'                    => [
 		'model' => '\SleepingOwl\AdminAuth\Entities\Administrator',
 		'rules' => [
 			'username' => 'required',
@@ -52,7 +33,9 @@ return [
 		]
 	],
 
-	'template'              => 'SleepingOwl\Admin\Templates\TemplateDefault',
+	'template'                => 'SleepingOwl\Admin\Templates\TemplateDefault',
 
-	'datetime_format'       => 'd.m.Y H:i:s',
+	'datetimeFormat'          => 'd.m.Y H:i',
+	'dateFormat'              => 'd.m.Y',
+	'timeFormat'              => 'H:i',
 ];

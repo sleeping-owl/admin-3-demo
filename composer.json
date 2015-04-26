@@ -7,7 +7,6 @@
 	"require": {
 		"laravel/framework": "5.0.*",
 		"sleeping-owl/admin": "dev-development",
-		"sleeping-owl/seeder": "~1.0",
 		"fzaninotto/faker": "1.5.*@dev",
 		"baum/baum": "~1.1"
 	},

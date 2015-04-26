@@ -1,0 +1,1 @@
+<p>This route is registered in <code>app/admin/routes.php</code> file.</p>

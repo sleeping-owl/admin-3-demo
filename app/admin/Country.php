@@ -1,53 +1,18 @@
 <?php
 
-Admin::model(\App\Country::class)->title('Countries')->display(function ()
+Admin::model('App\Country')->title('Countries (orderable)')->display(function ()
 {
-	$display = AdminDisplay::tabbed();
-	$display->tabs(function ()
+	$display = AdminDisplay::table();
+	$display->apply(function ($query)
 	{
-		$columns = [
-			Column::string('title')->label('Title'),
-			Column::custom()->label('Custom Column')->callback(function ($instance)
-			{
-				return substr($instance->title, 0, 3);
-			}),
-			Column::count('contacts')->label('Contacts')->append(Column::filter('country_id')->model(\App\Contact::class)),
-		];
-
-		$display = AdminDisplay::datatables();
-		$display->order([[1, 'asc']]);
-		$display->columns($columns);
-		$display->filters([
-			Filter::field('title')->title(function ($value)
-			{
-				return $value;
-			}),
-			Filter::scope('scope'),
-			Filter::custom('tt')->title(function ($value)
-			{
-				return 'Title: ' . $value;
-			})->callback(function ($query, $value)
-			{
-				$query->where('title', $value);
-			}),
-		]);
-
-		$display2 = AdminDisplay::table();
-		$display2->apply(function ($query)
-		{
-			$query->orderBy('id', 'desc');
-			$query->limit(3);
-		});
-		$display2->columns($columns);
-
-		$display3 = Admin::model(\App\Page::class)->display();
-
-		return [
-			AdminDisplay::tab($display)->label('All')->active(true),
-			AdminDisplay::tab($display2)->label('Last 3'),
-			AdminDisplay::tab($display3)->label('Pages'),
-		];
+		$query->orderBy('order', 'asc');
 	});
+	$display->columns([
+		Column::string('title')->label('Title'),
+		Column::count('contacts')->label('Contacts')->append(Column::filter('country_id')->model('App\Contact')),
+		Column::order(),
+	]);
+
 	return $display;
 })->createAndEdit(function ()
 {
