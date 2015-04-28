@@ -5,6 +5,7 @@ Admin::menu()->label('Data Display Types')->icon('fa-desktop')->items(function (
 {
 	Admin::menu('App\News')->label('Table')->icon('fa-table');
 	Admin::menu('App\News2')->label('Datatables')->icon('fa-table');
+	Admin::menu('App\News9')->label('Datatables Async')->icon('fa-table');
 	Admin::menu('App\News3')->label('Tabs')->icon('fa-reorder');
 	Admin::menu('App\Page')->label('Tree')->icon('fa-sitemap');
 	Admin::menu('App\News7')->label('Custom')->icon('fa-file-code-o');
