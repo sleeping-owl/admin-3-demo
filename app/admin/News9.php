@@ -7,10 +7,10 @@ Admin::model('App\News9')->title('News')->alias('news9')->display(function ()
 	$display->columns([
 		Column::string('title')->label('Title'),
 		Column::datetime('date')->label('Date')->format('d.m.Y'),
-		Column::custom()->label('Published')->callback(function ($instance)
+		Column::custom()->label('Published')->orderable(false)->callback(function ($instance)
 		{
 			return $instance->published ? '&check;' : '-';
-		})->orderable(false),
+		}),
 	]);
 	return $display;
 })->createAndEdit(function ()
