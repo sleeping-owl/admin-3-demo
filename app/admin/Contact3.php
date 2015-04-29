@@ -48,7 +48,7 @@ Admin::model('App\Contact3')->title('Contact')->alias('contacts3')->display(func
 			$instance = App\Contact::find($id);
 			if ($instance->country_id)
 			{
-				$country = Admin::model('App\Country')->edit($instance->country_id);
+				$country = Admin::model('App\Country')->fullEdit($instance->country_id);
 				$tabs[] = AdminDisplay::tab($country)->label('Form from Related Model (Country)');
 			}
 
