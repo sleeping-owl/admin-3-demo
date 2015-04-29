@@ -1,11 +1,17 @@
 <?php
 
+$template = 'SleepingOwl\Admin\Templates\TemplateDefault';
+if (isset($_COOKIE['admin-template']))
+{
+	$template = 'SleepingOwl\AdminLteTemplate\Template';
+}
+
 return [
 	/*
 	 * Admin title
 	 * Displays in page title and header
 	 */
-	'title'                   => 'Sleeping Owl administrator',
+	'title'                   => 'SleepingOwlAdmin',
 
 	/*
 	 * Admin url prefix
@@ -33,7 +39,7 @@ return [
 		]
 	],
 
-	'template'                => 'SleepingOwl\Admin\Templates\TemplateDefault',
+	'template'                => $template,
 
 	'datetimeFormat'          => 'd.m.Y H:i',
 	'dateFormat'              => 'd.m.Y',

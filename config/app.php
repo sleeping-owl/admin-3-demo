@@ -147,6 +147,7 @@ return [
 
 		'SleepingOwl\Admin\AdminServiceProvider',
 		'Baum\Providers\BaumServiceProvider',
+		'SleepingOwl\AdminLteTemplate\AdminLteTemplateServiceProvider',
 	],
 
 	/*
