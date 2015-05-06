@@ -6,10 +6,10 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
-		"sleeping-owl/admin": "dev-development#446ed8d3b532ba6b6c01e27a32b546b0da83db2a",
+		"sleeping-owl/admin": "dev-development",
 		"fzaninotto/faker": "1.5.*@dev",
 		"baum/baum": "~1.1",
-		"sleeping-owl/admin-lte-template": "dev-master#ca2a87979c172904815690f53d5b0eb59e871f56"
+		"sleeping-owl/admin-lte-template": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
