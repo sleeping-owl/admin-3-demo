@@ -22,14 +22,15 @@ class ContactsSeeder extends Seeder
 			$image = $faker->optional()->randomElement($files);
 
 			\App\Contact::create([
-				'firstName' => $faker->firstName,
-				'lastName'  => $faker->lastName,
-				'birthday'  => $faker->dateTimeThisCentury,
-				'phone'     => $faker->phoneNumber,
-				'address'   => $faker->address,
+				'firstName'  => $faker->firstName,
+				'lastName'   => $faker->lastName,
+				'birthday'   => $faker->dateTimeThisCentury,
+				'phone'      => $faker->phoneNumber,
+				'address'    => $faker->address,
 				'country_id' => $faker->optional()->randomElement($countries),
-				'comment' => $faker->paragraph(5),
-				'photo' => is_null($image) ? $image : ('images/uploads/' . $image),
+				'comment'    => $faker->paragraph(5),
+				'photo'      => is_null($image) ? $image : ('images/uploads/' . $image),
+				'height'     => $faker->randomNumber(2, true) + 100,
 			]);
 		}
 	}

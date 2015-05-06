@@ -16,7 +16,8 @@ class Contact extends Model
 		'address',
 		'country_id',
 		'comment',
-		'companies'
+		'companies',
+		'height',
 	];
 
 	protected $hidden = [

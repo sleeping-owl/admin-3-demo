@@ -21,6 +21,7 @@ Admin::menu('App\Contact')->icon('fa-columns')->label('Columns');
 Admin::menu()->label('Features')->icon('fa-briefcase')->items(function ()
 {
 	Admin::menu('App\Country')->icon('fa-sort')->label('Orderable');
+	Admin::menu('App\Contact4')->icon('fa-filter')->label('Column Filters');
 	Admin::menu('App\Post')->icon('fa-star-half-o')->label('Soft Deletes');
 	Admin::menu('App\News5')->icon('fa-lock')->label('Disable Create');
 	Admin::menu('App\News6')->icon('fa-lock')->label('Disable Edit or Delete');

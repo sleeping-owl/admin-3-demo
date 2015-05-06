@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.0.27 on 2015-04-19.
+ * Generated for Laravel 5.0.28 on 2015-05-04.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -558,6 +558,16 @@ namespace {
         }
         
         /**
+         * Get the application's deferred services.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getDeferredServices(){
+            return \Illuminate\Foundation\Application::getDeferredServices();
+        }
+        
+        /**
          * Set the application's deferred services.
          *
          * @param array $services
@@ -566,6 +576,17 @@ namespace {
          */
         public static function setDeferredServices($services){
             \Illuminate\Foundation\Application::setDeferredServices($services);
+        }
+        
+        /**
+         * Add an array of services to the application's deferred services.
+         *
+         * @param array $services
+         * @return void 
+         * @static 
+         */
+        public static function addDeferredServices($services){
+            \Illuminate\Foundation\Application::addDeferredServices($services);
         }
         
         /**
@@ -4362,7 +4383,7 @@ namespace {
          * Retrieve the minimum value of a given column.
          *
          * @param string $column
-         * @return mixed 
+         * @return float|int 
          * @static 
          */
         public static function min($column){
@@ -4373,7 +4394,7 @@ namespace {
          * Retrieve the maximum value of a given column.
          *
          * @param string $column
-         * @return mixed 
+         * @return float|int 
          * @static 
          */
         public static function max($column){
@@ -4384,7 +4405,7 @@ namespace {
          * Retrieve the sum of the values of a given column.
          *
          * @param string $column
-         * @return mixed 
+         * @return float|int 
          * @static 
          */
         public static function sum($column){
@@ -4395,7 +4416,7 @@ namespace {
          * Retrieve the average of the values of a given column.
          *
          * @param string $column
-         * @return mixed 
+         * @return float|int 
          * @static 
          */
         public static function avg($column){
@@ -4407,7 +4428,7 @@ namespace {
          *
          * @param string $function
          * @param array $columns
-         * @return mixed 
+         * @return float|int 
          * @static 
          */
         public static function aggregate($function, $columns = array()){
@@ -10058,6 +10079,19 @@ namespace {
         }
         
         /**
+         * Determine if the given table has given columns.
+         *
+         * @param string $table
+         * @param array $columns
+         * @return bool 
+         * @static 
+         */
+        public static function hasColumns($table, $columns){
+            //Method inherited from \Illuminate\Database\Schema\Builder            
+            return \Illuminate\Database\Schema\MySqlBuilder::hasColumns($table, $columns);
+        }
+        
+        /**
          * Modify a table on the schema.
          *
          * @param string $table
@@ -11536,6 +11570,17 @@ namespace {
         }
         
         /**
+         * Check if section exists.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */
+        public static function hasSection($name){
+            return \Illuminate\View\Factory::hasSection($name);
+        }
+        
+        /**
          * Get the entire array of sections.
          *
          * @return array 
@@ -11563,7 +11608,96 @@ namespace {
     }
 
 
+    class AdminAuth extends \SleepingOwl\AdminAuth\Facades\AdminAuth{
+        
+        /**
+         * Create an instance of the Eloquent driver.
+         *
+         * @return \Illuminate\Auth\Guard 
+         * @static 
+         */
+        public static function createEloquentDriver(){
+            return \SleepingOwl\AdminAuth\AdminAuthManager::createEloquentDriver();
+        }
+        
+        /**
+         * Get the default authentication driver name.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getDefaultDriver(){
+            return \SleepingOwl\AdminAuth\AdminAuthManager::getDefaultDriver();
+        }
+        
+        /**
+         * Create an instance of the database driver.
+         *
+         * @return \Illuminate\Auth\Guard 
+         * @static 
+         */
+        public static function createDatabaseDriver(){
+            //Method inherited from \Illuminate\Auth\AuthManager            
+            return \SleepingOwl\AdminAuth\AdminAuthManager::createDatabaseDriver();
+        }
+        
+        /**
+         * Set the default authentication driver name.
+         *
+         * @param string $name
+         * @return void 
+         * @static 
+         */
+        public static function setDefaultDriver($name){
+            //Method inherited from \Illuminate\Auth\AuthManager            
+            \SleepingOwl\AdminAuth\AdminAuthManager::setDefaultDriver($name);
+        }
+        
+        /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return mixed 
+         * @static 
+         */
+        public static function driver($driver = null){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \SleepingOwl\AdminAuth\AdminAuthManager::driver($driver);
+        }
+        
+        /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param \Closure $callback
+         * @return $this 
+         * @static 
+         */
+        public static function extend($driver, $callback){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \SleepingOwl\AdminAuth\AdminAuthManager::extend($driver, $callback);
+        }
+        
+        /**
+         * Get all of the created "drivers".
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getDrivers(){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \SleepingOwl\AdminAuth\AdminAuthManager::getDrivers();
+        }
+        
+    }
+
+
     class Column extends \SleepingOwl\Admin\Columns\Column{
+        
+    }
+
+
+    class ColumnFilter extends \SleepingOwl\Admin\ColumnFilters\ColumnFilter{
         
     }
 
@@ -11590,17 +11724,8 @@ namespace {
          *
          * @static 
          */
-        public static function directory(){
-            return \SleepingOwl\Admin\Templates\TemplateDefault::directory();
-        }
-        
-        /**
-         * 
-         *
-         * @static 
-         */
         public static function view($view){
-            return \SleepingOwl\Admin\Templates\TemplateDefault::view($view);
+            return \SleepingOwl\AdminLteTemplate\Template::view($view);
         }
         
     }
