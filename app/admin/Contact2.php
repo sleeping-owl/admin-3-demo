@@ -32,6 +32,7 @@ Admin::model('App\Contact2')->title('Contact')->alias('contacts2')->display(func
 			],
 			[
 				FormItem::select('country_id', 'Country')->model('App\Country')->display('title'),
+				FormItem::multiselect('companies', 'Companies')->model('App\Company')->display('title'),
 				FormItem::textarea('comment', 'Comment'),
 			],
 		]),

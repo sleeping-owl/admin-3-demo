@@ -40,4 +40,14 @@ class Contact extends Model
 		return $this->firstName . ' ' . $this->lastName;
 	}
 
+	public function setCompaniesAttribute($companies)
+	{
+		$this->companies()->detach();
+		if ( ! $companies) return;
+
+		if ( ! $this->exists) $this->save();
+
+		$this->companies()->attach($companies);
+	}
+
 }
