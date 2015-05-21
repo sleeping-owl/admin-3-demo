@@ -6,7 +6,7 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
-		"sleeping-owl/admin": "dev-development",
+		"sleeping-owl/admin": "dev-development#49a3a4ccd1b2a60fe7f05c1441be6bae7ff2cc27",
 		"fzaninotto/faker": "1.5.*@dev",
 		"baum/baum": "~1.1",
 		"sleeping-owl/admin-lte-template": "dev-master"
