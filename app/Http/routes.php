@@ -21,5 +21,7 @@ Route::get('/reset', function ()
 
 Route::get('/test', function ()
 {
-	dd(\SleepingOwl\AdminAuth\Entities\Administrator::all());
+	dd(\SleepingOwl\AdminAuth\Entities\Administrator::all(), \SleepingOwl\AdminAuth\Entities\Administrator::first()->update([
+		'password' => 'SleepingOwl',
+	]));
 });
