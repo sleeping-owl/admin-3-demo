@@ -18,10 +18,3 @@ Route::get('/reset', function ()
 	Artisan::call('migrate:refresh', ['--force' => true]);
 	Artisan::call('db:seed', ['--force' => true]);
 });
-
-Route::get('/test', function ()
-{
-	dd(\SleepingOwl\AdminAuth\Entities\Administrator::all(), \SleepingOwl\AdminAuth\Entities\Administrator::first()->update([
-		'password' => 'SleepingOwl',
-	]));
-});
